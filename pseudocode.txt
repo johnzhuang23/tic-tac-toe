@@ -1,0 +1,31 @@
+create a 3x3 grid as the board
+
+click the first cell, turn the cell to shape "x"
+click the second cell, then the cell becomes shape "o"
+if the cell has been clicked, it cannot be clicked again
+    using classlist.add() to put the clicked cell into different classes;
+    using once: true in addEventListener to make sure each cell can only be clicked once;
+    using click %2 =0 to decide the cell will become x or o;
+
+the condition of winning the game: the same shape is connected in a line, vertically, or horizontally, or diagonally：
+    each cell, from left to right, up to down, is given a number :
+    1 2 3
+    4 5 6
+    7 8 9 
+    so the winning situation is the following combinations where each cell has the same new class name (x or o):
+    123
+    456
+    789
+    147
+    258
+    369
+    159
+    357
+    
+    use a loop to make a judegement, and because the quickest way to win a game needs at least 5 steps, so the judegement can start from the fifth click.
+
+a windows pop up to tell which shape is the winner
+
+if all the cells are clicked, but no winning condition is reached, pop up a windows say draw
+
+a reset button to restart the game
