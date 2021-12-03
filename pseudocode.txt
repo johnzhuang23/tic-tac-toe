@@ -24,8 +24,8 @@ the condition of winning the game: the same shape is connected in a line, vertic
     
     use a loop to make a judegement, and because the quickest way to win a game needs at least 5 steps, so the judegement can start from the fifth click.
 
-a windows pop up to tell which shape is the winner
+a message pop up to tell which shape is the winner
 
-if all the cells are clicked, but no winning condition is reached, pop up a windows say draw
+if the number of clicks reaches 9 and none of the above 8 winning conditions is reached, then call it a draw. 
 
 a reset button to restart the game

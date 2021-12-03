@@ -7,7 +7,7 @@
     gap:8px;
 }
 
-.cell {
+section div{
     display: block;
     cursor: pointer;
     width: 100%;
