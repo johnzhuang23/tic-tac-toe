@@ -19,7 +19,7 @@ cells.forEach(function (cell) {
     cell.addEventListener('click', click, { once: true })
 })
 
-let clickTime = 0;
+let clickTime = 1;
 let winner = false;
 function click(event) {
     // if(winner = true){
@@ -29,9 +29,9 @@ function click(event) {
         return;
     }
     if (clickTime % 2 == 0) {
-        event.target.dataset.number = 1;
-    } else {
         event.target.dataset.number = -1;
+    } else {
+        event.target.dataset.number = 1;
     }
     if (newDataNumber(cell1) + newDataNumber(cell2) + newDataNumber(cell3) == 3 ||
         newDataNumber(cell1) + newDataNumber(cell4) + newDataNumber(cell7) == 3 ||
@@ -56,10 +56,10 @@ function click(event) {
     ) {
         document.querySelector('.message').textContent = 'The winner is O! Click Restart to play again!';
         // winner = true;
-    } else if (clickTime >= 8 && document.querySelector('.message').textContent == '') {
-        document.querySelector('.message').textContent = 'draw';
+    } else if (clickTime >= 9 && document.querySelector('.message').textContent == '') {
+        document.querySelector('.message').textContent = 'It is a DRAW! Click Restart to play again!';
         // winner = true;
-    }
+    } steps(event);
     clickTime++;
 }
 
@@ -71,6 +71,20 @@ function resetButton() {
         cells[i].addEventListener('click', click, { once: true })
     }
     document.querySelector('.message').textContent = '';
-    clickTime = 0;
-    winner = false;
+    clickTime = 1;
+    // winner = false;
+    document.querySelector('.steps').textContent = '';
+    document.querySelector('.steps').removeChild;
 };
+
+function steps(event) {
+    if (clickTime % 2 == 1) {
+        let newPara = document.createElement('li');
+        document.querySelector('.steps').insertBefore(newPara, document.querySelector('ul p'));
+        document.querySelectorAll('li')[clickTime - 1].textContent = `Step ${clickTime}: X${event.target.textContent}`;
+    } else if (clickTime % 2 == 0) {
+        let newPara = document.createElement('li');
+        document.querySelector('.steps').insertBefore(newPara, document.querySelector('ul p'));
+        document.querySelectorAll('li')[clickTime - 1].textContent = `Step ${clickTime}: O${event.target.textContent}`;
+    }
+}
