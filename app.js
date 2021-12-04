@@ -42,7 +42,7 @@ function click(event) {
         newDataNumber(cell4) + newDataNumber(cell5) + newDataNumber(cell6) == 3 ||
         newDataNumber(cell7) + newDataNumber(cell8) + newDataNumber(cell9) == 3
     ) {
-        document.querySelector('.message').textContent = 'The winner is X! Click Restart to play again!';
+        document.querySelector('.message').textContent = 'X Win!';
         // winner = true;
     } else if (
         newDataNumber(cell1) + newDataNumber(cell2) + newDataNumber(cell3) == -3 ||
@@ -54,10 +54,10 @@ function click(event) {
         newDataNumber(cell4) + newDataNumber(cell5) + newDataNumber(cell6) == -3 ||
         newDataNumber(cell7) + newDataNumber(cell8) + newDataNumber(cell9) == -3
     ) {
-        document.querySelector('.message').textContent = 'The winner is O! Click Restart to play again!';
+        document.querySelector('.message').textContent = 'O Win!';
         // winner = true;
     } else if (clickTime >= 9 && document.querySelector('.message').textContent == '') {
-        document.querySelector('.message').textContent = 'It is a DRAW! Click Restart to play again!';
+        document.querySelector('.message').textContent = 'A DRAW! Click Restart to play again!';
         // winner = true;
     } steps(event);
     clickTime++;
@@ -81,10 +81,10 @@ function steps(event) {
     if (clickTime % 2 == 1) {
         let newPara = document.createElement('li');
         document.querySelector('.steps').insertBefore(newPara, document.querySelector('ul p'));
-        document.querySelectorAll('li')[clickTime - 1].textContent = `Step ${clickTime}: X${event.target.textContent}`;
+        document.querySelectorAll('li')[clickTime - 1].textContent = `Step ${clickTime}: X-${event.target.textContent}`;
     } else if (clickTime % 2 == 0) {
         let newPara = document.createElement('li');
         document.querySelector('.steps').insertBefore(newPara, document.querySelector('ul p'));
-        document.querySelectorAll('li')[clickTime - 1].textContent = `Step ${clickTime}: O${event.target.textContent}`;
+        document.querySelectorAll('li')[clickTime - 1].textContent = `Step ${clickTime}: O-${event.target.textContent}`;
     }
 }
