@@ -20,7 +20,7 @@ cells.forEach(function (cell) {
 })
 
 let clickTime = 1;
-let winner = false;
+// let winner = false;
 function click(event) {
     // if(winner = true){
     //     return;
@@ -56,7 +56,7 @@ function click(event) {
     ) {
         document.querySelector('.message').textContent = 'O Win!';
         // winner = true;
-    } else if (clickTime >= 9 && document.querySelector('.message').textContent == '') {
+    } else if (clickTime == 9 && document.querySelector('.message').textContent == '') {
         document.querySelector('.message').textContent = 'A DRAW! Click Restart to play again!';
         // winner = true;
     } steps(event);
